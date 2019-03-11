@@ -36,10 +36,18 @@
                 <pattern>${PATTERN}</pattern>
             </layout>
         </appender>
+<!--下边的这个appender节点是为了让控制台也输出-->
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${PATTERN}</pattern>
+            </encoder>
+        </appender>
+
         <logger name="com.light.springboot" level="debug" />
 
         <root level="debug">
             <appender-ref ref="TEST-FILE" />
+            <appender-ref ref="CONSOLE" />
         </root>
     </springProfile>
 
