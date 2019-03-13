@@ -11,7 +11,7 @@ public class ThymeleafController {
 
     @RequestMapping("hello")
     public String hello(Map<String,Object> map) {
-        map.put("msg", "Hello Thymeleaf");
-        return "hello";
+        map.put("msgg", "Hello Thymeleaf");
+        return "helloth";
     }
 }
