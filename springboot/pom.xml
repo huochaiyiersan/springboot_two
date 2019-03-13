@@ -42,12 +42,17 @@
             <optional>true</optional>
             <scope>true</scope>
         </dependency>
-
+        <!--整合framework依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
 
+        <!--整合thymeleaf依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <!-- 配置 log4j2依赖包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
