@@ -43,6 +43,11 @@
             <scope>true</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
         <!-- 配置 log4j2依赖包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
