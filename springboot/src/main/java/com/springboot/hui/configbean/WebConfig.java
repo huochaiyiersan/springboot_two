@@ -5,11 +5,13 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.springboot.hui.filter.TimeFilter;
+import com.springboot.hui.listener.ListenerContextTest;
 import com.springboot.hui.servlet.ServletTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +35,10 @@ public class WebConfig {
         System.out.println("ds.password:" + this.environment.getProperty("ds.password"));
     }
 
-
+    /**
+     * 配置json
+     * @return
+     */
     @Bean
     public HttpMessageConverters fastJsonHttpMessageConverters() {
         FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
@@ -49,11 +54,19 @@ public class WebConfig {
 
     }
 
+    /**
+     * 配置servlet
+     * @return
+     */
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         return new ServletRegistrationBean(new ServletTest(),"/servlet");
     }
 
+    /**
+     * 配置过滤器
+     * @return
+     */
     @Bean
     public FilterRegistrationBean timeFilter() {
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
@@ -66,5 +79,15 @@ public class WebConfig {
         registrationBean.setUrlPatterns(urls);
 
         return registrationBean;
+    }
+
+
+    /**
+     * 配置上下文context监听器
+     * @return
+     */
+    @Bean
+    public ServletListenerRegistrationBean<ListenerContextTest> servletListenerRegistrationBean() {
+        return new ServletListenerRegistrationBean<ListenerContextTest>(new ListenerContextTest());
     }
 }
