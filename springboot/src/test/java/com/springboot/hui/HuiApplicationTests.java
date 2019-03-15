@@ -1,7 +1,9 @@
 package com.springboot.hui;
 
+import com.springboot.hui.mail.JavaMailComponent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -11,6 +13,14 @@ public class HuiApplicationTests {
 
     @Test
     public void contextLoads() {
+    }
+
+    @Autowired
+    private JavaMailComponent javaMailComponent;
+
+    @Test
+    public void test() {
+        this.javaMailComponent.sendMail("1179757089@qq.com");
     }
 
 }
