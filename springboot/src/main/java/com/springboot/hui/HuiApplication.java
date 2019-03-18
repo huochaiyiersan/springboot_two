@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import java.util.Map;
 
 @SpringBootApplication
-@EnableScheduling
+@EnableScheduling//spring自带定时器要加这个注解即可
 public class HuiApplication {
 
     public static void main(String[] args) {

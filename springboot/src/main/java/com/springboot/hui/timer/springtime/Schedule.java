@@ -8,7 +8,7 @@ import java.util.Date;
 @Component
 public class Schedule {
 
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(fixedRate = 2000)//代表每2秒执行一次
     public void task() {
         System.out.println("启动定时任务:" + new Date());
     }
