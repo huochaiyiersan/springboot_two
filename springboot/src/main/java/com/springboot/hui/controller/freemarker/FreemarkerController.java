@@ -1,4 +1,4 @@
-package com.springboot.hui.Controller.freemarker;
+package com.springboot.hui.controller.freemarker;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

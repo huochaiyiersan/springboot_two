@@ -1,4 +1,4 @@
-package com.springboot.hui.Controller.json;
+package com.springboot.hui.controller.json;
 
 import com.springboot.hui.mode.User;
 import org.springframework.stereotype.Controller;

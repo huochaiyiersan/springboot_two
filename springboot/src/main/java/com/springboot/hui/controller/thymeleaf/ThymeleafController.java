@@ -1,4 +1,4 @@
-package com.springboot.hui.Controller.thymeleaf;
+package com.springboot.hui.controller.thymeleaf;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

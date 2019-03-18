@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeAspect {
 
-    @Around("execution(* com.springboot.hui.Controller.json.FastJsonController..*(..))")
+    @Around("execution(* com.springboot.hui.controller.json.FastJsonController..*(..))")
     public Object method(ProceedingJoinPoint pjp) throws Throwable {
 
         System.out.println("=====Aspect处理=======");
