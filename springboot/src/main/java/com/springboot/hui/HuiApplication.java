@@ -7,10 +7,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.Map;
 
 @SpringBootApplication
+@EnableScheduling
 public class HuiApplication {
 
     public static void main(String[] args) {
@@ -19,10 +21,10 @@ public class HuiApplication {
        // DataSourceProperties Config = action.getBean(DataSourceProperties.class);
        // Config.show();
         //获取入口程序的编码字符类型
-        System.out.println(System.getProperty("file.encoding"));
+       // System.out.println(System.getProperty("file.encoding"));
 
-        Map<String, EncodingConvertor> map = action.getBeansOfType(EncodingConvertor.class);
-        System.out.println(map);
+      //  Map<String, EncodingConvertor> map = action.getBeansOfType(EncodingConvertor.class);
+       // System.out.println(map);
     }
 
 }
