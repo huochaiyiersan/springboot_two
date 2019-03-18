@@ -58,10 +58,21 @@ public class QuartzConfiguration {
         return factory;
     }*/
 
+/*
     @Bean
     public SchedulerFactoryBean schedulerFactoryBean(CronTriggerFactoryBean cronTriggerFactory){
         SchedulerFactoryBean factory = new SchedulerFactoryBean();
         factory.setTriggers(cronTriggerFactory.getObject());
         return factory;
     }
+*/
+
+    @Bean
+    public SchedulerFactoryBean schedulerFactoryBean(CronTriggerFactoryBean cronTriggerFactory,CustomAdaptableJobFactory customAdaptableJobFactory){
+        SchedulerFactoryBean factory = new SchedulerFactoryBean();
+        factory.setTriggers(cronTriggerFactory.getObject());
+        factory.setJobFactory(customAdaptableJobFactory);
+        return factory;
+    }
+
 }
